@@ -25,3 +25,4 @@ dependencies:
   - pip:
     - beavis
     - chispa
+    - delta-spark

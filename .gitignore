@@ -131,3 +131,5 @@ dmypy.json
 *.dirlock
 
 tmp/
+
+.idea/
