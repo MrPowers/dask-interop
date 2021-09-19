@@ -19,6 +19,7 @@ def test_pyspark_delta_to_dask():
     chispa.assert_df_equality(actual_df, df, ignore_row_order=True)
 
     # verify contents of Parquet files with Dask
+    # @rajagurunath can you please update this to read the Delta Lake with your lib?
     # actual_ddf = dd.read_parquet("tmp/some-data-pyspark", engine="pyarrow")
     # df = pd.DataFrame({"name": ["jose", "li", "luisa"], "num": [10, 12, 14]})
     # expected_ddf = dd.from_pandas(df, npartitions=1)
