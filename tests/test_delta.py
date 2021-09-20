@@ -23,6 +23,6 @@ def test_pyspark_delta_to_dask():
     actual_ddf = ddt.read_delta_table("tmp/some-delta-pyspark", engine="pyarrow")
     df = pd.DataFrame({"name": ["jose", "li", "luisa"], "num": [10, 12, 14]})
     expected_ddf = dd.from_pandas(df, npartitions=1)
-    beavis.assert_dd_equality(actual_ddf.sort_values(by='num'), 
-                            expected_ddf,
-                            check_index=False)
+    beavis.assert_dd_equality(
+        actual_ddf.sort_values(by="num"), expected_ddf, check_index=False
+    )

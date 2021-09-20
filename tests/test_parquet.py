@@ -36,4 +36,3 @@ def test_dask_parquet_to_pyspark():
     expected_df = spark.createDataFrame(data, ["name", "num"])
     actual_df = spark.read.parquet("tmp/some-data-dask")
     chispa.assert_df_equality(actual_df, expected_df)
-

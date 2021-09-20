@@ -4,7 +4,8 @@ Integration tests to demonstrate Dask's interoperability with other systems.
 
 Some example checks:
 
-* Parquet files written by PySpark can be read by Dask
+* PySpark Parquet <=> Dask
+* Delta Lake => Dask
 
 ## Setup
 
