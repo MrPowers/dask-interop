@@ -7,7 +7,7 @@ Some example checks:
 * PySpark Parquet => Dask
 * Delta Lake => Dask
 
-## Setup
+## Run tests
 
 Create the conda environment on your machine with `conda env create -f envs/dask-interop.yml`.
 

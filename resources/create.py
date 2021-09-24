@@ -22,4 +22,3 @@ df.write.mode("overwrite").parquet("resources/parquet/1")
 data = [("jose", 10), ("li", 12), ("luisa", 14)]
 df = spark.createDataFrame(data, ["name", "num"])
 df.write.mode("overwrite").format("delta").save("resources/delta/1")
-
