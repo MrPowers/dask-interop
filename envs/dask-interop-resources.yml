@@ -1,4 +1,4 @@
-name: dask-interop
+name: dask-interop-resources
 channels:
   - conda-forge
   - defaults
@@ -19,9 +19,11 @@ dependencies:
   - jupyterlab_code_formatter
   - isort
   - black
+  - pyspark
   - pytest
   - pip
   - pip:
     - beavis
     - chispa
-    - deltalake
+    - delta-spark
+
