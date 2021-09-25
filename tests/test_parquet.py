@@ -13,6 +13,9 @@ def test_pyspark_parquet_to_dask_pyarrow():
 
 
 def test_pyspark_parquet_to_dask_fastparquet():
+    actual_df = pd.read_parquet(
+        "resources/parquet/1", engine="fastparquet"
+    )
     actual_ddf = dd.read_parquet(
         os.path.join("resources/parquet/1", "*.parquet"), engine="fastparquet"
     )
