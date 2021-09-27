@@ -5,10 +5,6 @@ from pyspark.sql import SparkSession
 
 from delta import *
 
-dirpath = Path("resources") / "parquet"
-if dirpath.exists() and dirpath.is_dir():
-    shutil.rmtree(dirpath)
-
 dirpath = Path("resources") / "delta"
 if dirpath.exists() and dirpath.is_dir():
     shutil.rmtree(dirpath)
@@ -25,13 +21,7 @@ builder = (
 
 spark = configure_spark_with_delta_pip(builder).getOrCreate()
 
-# write Parquet files with PySpark
-data = [("jose", 10), ("li", 12), ("luisa", 14)]
-df = spark.createDataFrame(data, ["name", "num"])
-df.write.mode("overwrite").parquet("resources/parquet/1")
-
 # write Delta files with PySpark
-
 # 1
 data = [("jose", 10), ("li", 12), ("luisa", 14)]
 df = spark.createDataFrame(data, ["name", "num"])

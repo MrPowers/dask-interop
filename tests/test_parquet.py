@@ -19,3 +19,13 @@ def test_pyspark_parquet_to_dask_fastparquet():
     df = pd.DataFrame({"name": ["jose", "li", "luisa"], "num": [10, 12, 14]})
     expected_ddf = dd.from_pandas(df, npartitions=1)
     beavis.assert_dd_equality(actual_ddf, expected_ddf, check_index=False)
+
+
+def test_parquet2():
+    actual_ddf = dd.read_parquet(
+        "resources/parquet/2", engine="pyarrow", filters=[("letter", "==", "a")]
+    )
+    df = pd.DataFrame({"number": [1, 4, 5], "letter": ["a", "a", "a"]})
+    expected_ddf = dd.from_pandas(df, npartitions=1)
+    beavis.assert_dd_equality(actual_ddf, expected_ddf, check_index=False)
+
