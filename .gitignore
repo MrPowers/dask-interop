@@ -133,3 +133,4 @@ dmypy.json
 tmp/
 
 .idea/
+*.crc
